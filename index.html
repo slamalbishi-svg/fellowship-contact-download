@@ -47,15 +47,21 @@
           </svg>
         </div>
         <span class="card-tag">الطريقة الأسهل</span>
-        <h2 class="card-title">إضافة جميع جهات الاتصال مباشرة على الهاتف (VCF)</h2>
-        <p class="card-desc">حمّل ملف جهات الاتصال لإضافة معلومات الزملاء والزميلات إلى هاتفك دفعة واحدة.</p>
-        <a class="btn btn-primary" href="files/fellowship-contacts.vcf" download="fellowship-contacts.vcf">
+        <h2 class="card-title">إضافة جهة الاتصال مباشرة على الهاتف (VCF)</h2>
+        <p class="card-desc">اختر اسم الزميل أو الزميلة، ثم أضفه مباشرة إلى جهات الاتصال في هاتفك.</p>
+
+        <div class="contact-search">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 3v12m0 0 4.5-4.5M12 15 7.5 10.5M5 19h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.8"/>
+            <path d="m20 20-4.3-4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
           </svg>
-          <span>تحميل جهات الاتصال (VCF)</span>
-        </a>
-        <p class="card-hint">بعد التحميل، افتح الملف واتبع خطوات إضافة جهات الاتصال في هاتفك.</p>
+          <input type="search" id="contactSearch" placeholder="ابحث باسم الزميل أو الزميلة" aria-label="ابحث باسم الزميل أو الزميلة" autocomplete="off">
+        </div>
+
+        <ul class="contact-list" id="contactList" role="list" aria-live="polite"></ul>
+        <p class="contact-empty" id="contactEmpty" hidden>لا توجد نتائج مطابقة.</p>
+
+        <p class="card-hint">قد يطلب نظام الهاتف تأكيد إنشاء جهة الاتصال.</p>
       </article>
 
       <article class="card card-secondary">
@@ -86,6 +92,7 @@
 
 </div>
 
+<script src="assets/contacts-data.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>
