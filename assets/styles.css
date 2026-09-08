@@ -302,57 +302,71 @@ body{
 }
 .contact-search input::placeholder{color:var(--muted)}
 
-.contact-list{
+.contact-table{
   list-style:none;
-  margin:0 0 4px;
+  margin:0 0 6px;
   padding:0;
-  max-height:320px;
+  max-height:70vh;
   overflow-y:auto;
   -webkit-overflow-scrolling:touch;
+  overflow-x:hidden;
   border-radius:14px;
-  border:1px solid rgba(12,43,37,.08);
-  background:rgba(255,255,255,.6);
+  border:1px solid rgba(12,43,37,.10);
+  background:#fff;
 }
 .contact-row{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:8px;
-  padding:12px 14px;
+  display:grid;
+  grid-template-columns:2.2em minmax(0,1fr) auto;
+  align-items:center;
+  gap:10px;
+  min-height:54px;
+  padding:8px 14px;
   border-bottom:1px solid rgba(12,43,37,.07);
 }
 .contact-row:last-child{border-bottom:none}
-
+.row-num{
+  font-family:var(--head);
+  font-weight:700;
+  font-size:12.5px;
+  color:var(--muted);
+  text-align:center;
+  font-variant-numeric:tabular-nums;
+}
 .contact-name{
-  width:100%;
-  font-size:14.5px;
+  min-width:0;
+  font-family:var(--body);
+  font-size:15px;
   font-weight:700;
   color:var(--inkD);
-  line-height:1.4;
+  line-height:1.35;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
-
 .btn-row{
   display:inline-flex;
   align-items:center;
+  justify-content:center;
   gap:6px;
   flex:none;
   font-family:var(--head);
-  font-weight:700;
-  font-size:12px;
-  color:var(--teal);
-  background:rgba(51,199,163,.12);
-  border:1px solid rgba(51,199,163,.4);
-  border-radius:999px;
-  padding:7px 12px;
+  font-weight:800;
+  font-size:13px;
+  color:#fff;
+  background:var(--teal);
+  border:none;
+  border-radius:10px;
+  padding:9px 16px;
+  min-height:40px;
   text-decoration:none;
   white-space:nowrap;
   -webkit-tap-highlight-color:transparent;
-  transition:background .15s ease;
+  transition:background .15s ease,transform .1s ease;
 }
-.btn-row svg{width:14px;height:14px;flex:none}
-.btn-row:hover{background:rgba(51,199,163,.22)}
-.btn-row:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
-.btn-row:active{transform:scale(.97)}
+.btn-row svg{width:15px;height:15px;flex:none}
+.btn-row:hover{background:#1f7d66}
+.btn-row:focus-visible{outline:3px solid var(--inkD);outline-offset:2px}
+.btn-row:active{transform:scale(.96)}
 
 .contact-empty{
   text-align:center;
